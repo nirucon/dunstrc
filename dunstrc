@@ -1,174 +1,119 @@
+
 [global]
     ### Display ###
 
-    # Monitor for notifications
     monitor = 0
+    follow = none
 
-    # Sound
-    sound = none
+    ### Geometry ###
 
-    # Follow mouse pointer or keyboard focus
-    follow = mouse
+    width = 300
+    height = (0, 300)
+    origin = top-right
+    offset = (10, 50)
+    scale = 0
+    notification_limit = 20
 
-    # Notification window geometry (width x height +/- x +/- y)
-    geometry = "0x0-30+20"
+    ### Progress bar ###
 
-    # Indicate hidden messages
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 0
+    progress_bar_corners = all
+    icon_corner_radius = 0
+    icon_corners = all
     indicate_hidden = yes
 
-    # Shrink window if smaller than width
-    shrink = no
+    ### Transparency and Separator ###
 
-    # Transparency of the window (0-100)
     transparency = 0
-
-    # Height of the entire notification
-    notification_height = 0
-
-    # Separator height between notifications
     separator_height = 2
-
-    # Padding between text and separator
     padding = 8
-
-    # Horizontal padding
     horizontal_padding = 8
-
-    # Frame width around the notification window
+    text_icon_padding = 0
     frame_width = 3
+    frame_color = "#444444"
+    gap_size = 0
+    separator_color = frame
 
-    # Frame color around the notification window
-    frame_color = "#444444"  # Using col_gray2
+    ### Sort ###
 
-    # Color for the separator
-    separator_color = auto
-
-    # Sort messages by urgency
     sort = yes
-
-    # Idle threshold in seconds
-    idle_threshold = 120
+    idle_threshold = 0
 
     ### Text ###
-    font = JetBrains Mono Medium 10
 
-    # Line spacing
+    font = Monospace 8
     line_height = 0
-
-    # Markup parsing options (full, strip, no)
     markup = full
-
-    # Message format
     format = "<b>%s</b>\n%b"
-
-    # Text alignment (left, center, right)
-    alignment = center
-
-    # Show message age if older than threshold (seconds)
+    alignment = left
+    vertical_alignment = center
     show_age_threshold = 60
-
-    # Word wrap notifications
-    word_wrap = yes
-
-    # Ellipsize long lines (start, middle, end)
     ellipsize = middle
-
-    # Ignore newlines in notifications
     ignore_newline = no
-
-    # Stack notifications with the same content
     stack_duplicates = true
-
-    # Hide count of stacked notifications
     hide_duplicate_count = false
-
-    # Display indicators for URLs and actions
     show_indicators = yes
 
     ### Icons ###
-    # Icon position (left, right, off)
+
+    enable_recursive_icon_lookup = true
+    icon_theme = Adwaita
     icon_position = left
-
-    # Max icon size (0 to disable)
-    max_icon_size = 32
-
-    # Paths to default icons
-    #icon_path = ...
+    min_icon_size = 32
+    max_icon_size = 128
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
     ### History ###
-    # Sticky history notifications
-    sticky_history = yes
 
-    # Maximum notifications kept in history
+    sticky_history = yes
     history_length = 20
 
     ### Misc/Advanced ###
-    # Path to dmenu
-    dmenu = dmenu -p dunst:
 
-    # Browser for opening URLs
-    browser = brave
-
-    # Always run rule-defined scripts
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/xdg-open
     always_run_script = true
-
-    # Title of the windows spawned by dunst
     title = Dunst
-
-    # Class of the windows spawned by dunst
     class = Dunst
+    corner_radius = 0
+    corners = all
+    ignore_dbusclose = false
 
-    # Print notification on startup
-    startup_notification = false
-
-    # Verbosity level
-    verbosity = mesg
-
-    # Corner radius of the notification window
-    corner_radius = 5
+    ### Wayland ###
+    force_xwayland = false
 
     ### Legacy ###
-    # Use Xinerama instead of RandR
+
     force_xinerama = false
 
-    ### Mouse ###
-    # Mouse event actions
-    mouse_left_click = do_action
-    mouse_middle_click = close_all
-    mouse_right_click = close_current
+    ### mouse ###
+
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
 
 [experimental]
-    # Calculate dpi per monitor
     per_monitor_dpi = false
 
-[shortcuts]
-    # Shortcuts
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
-
 [urgency_low]
-    # Low urgency settings NOTE ICON PATH
-    sound = ""
-    background = "#444444"  # Using col_cyan (same as col_gray2)
-    foreground = "#E6E6E6"  # Using col_gray3
-    timeout = 5
-    icon = /home/niru/.config/dunst/normal.png
+    background = "#2E2E2E"
+    foreground = "#888888"
+    timeout = 10
 
 [urgency_normal]
-    # Normal urgency settings NOTE ICON PATH
-    sound = ""
-    background = "#444444"  # Using col_cyan (same as col_gray2)
-    foreground = "#E6E6E6"  # Using col_gray3
-    timeout = 5
-    icon = /home/niru/.config/dunst/normal.png
+    background = "#2E2E2E"
+    foreground = "#E6E6E6"
+    timeout = 10
+    override_pause_level = 30
 
 [urgency_critical]
-    # Critical urgency settings NOTE ICON PATH
-    sound = ""
-    background = "#900000"
-    foreground = "#FFFFFF"  # Using col_gray4
-    frame_color = "#FF0000"  # Using col_brightborder
-    timeout = 5
-    icon = /home/niru/.config/dunst/critical.png
+    background = "#2E2E2E"
+    foreground = "#FFFFFF"
+    frame_color = "#FF0000"
+    timeout = 0
+    override_pause_level = 60
