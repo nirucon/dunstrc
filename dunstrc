@@ -4,6 +4,9 @@
     # Monitor for notifications
     monitor = 0
 
+    # Sound
+    sound = none
+
     # Follow mouse pointer or keyboard focus
     follow = mouse
 
