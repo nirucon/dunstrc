@@ -146,23 +146,23 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    # Low urgency settings
+    # Low urgency settings NOTE ICON PATH
     background = "#2b2b2b"
     foreground = "#ffffff"
     timeout = 5
-    icon = ~/.config/dunst/normal.png
+    icon = /home/niru/.config/dunst/normal.png
 
 [urgency_normal]
-    # Normal urgency settings
+    # Normal urgency settings NOTE ICON PATH
     background = "#2b2b2b"
     foreground = "#ffffff"
     timeout = 5
-    icon = ~/.config/dunst/normal.png
+    icon = /home/niru/.config/dunst/normal.png
 
 [urgency_critical]
-    # Critical urgency settings
+    # Critical urgency settings NOTE ICON PATH
     background = "#900000"
     foreground = "#ffffff"
     frame_color = "#ff0000"
     timeout = 5
-    icon = ~/.config/dunst/critical.png
+    icon = /home/niru/.config/dunst/critical.png
