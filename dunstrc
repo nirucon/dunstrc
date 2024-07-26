@@ -35,7 +35,7 @@
     frame_width = 3
 
     # Frame color around the notification window
-    frame_color = "#aaaaaa"
+    frame_color = "#444444"  # Using col_gray2
 
     # Color for the separator
     separator_color = auto
@@ -90,7 +90,7 @@
     max_icon_size = 32
 
     # Paths to default icons
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    #icon_path = ...
 
     ### History ###
     # Sticky history notifications
@@ -147,22 +147,22 @@
 
 [urgency_low]
     # Low urgency settings NOTE ICON PATH
-    background = "#2b2b2b"
-    foreground = "#ffffff"
+    background = "#444444"  # Using col_cyan (same as col_gray2)
+    foreground = "#E6E6E6"  # Using col_gray3
     timeout = 5
     icon = /home/niru/.config/dunst/normal.png
 
 [urgency_normal]
     # Normal urgency settings NOTE ICON PATH
-    background = "#2b2b2b"
-    foreground = "#ffffff"
+    background = "#444444"  # Using col_cyan (same as col_gray2)
+    foreground = "#E6E6E6"  # Using col_gray3
     timeout = 5
     icon = /home/niru/.config/dunst/normal.png
 
 [urgency_critical]
     # Critical urgency settings NOTE ICON PATH
     background = "#900000"
-    foreground = "#ffffff"
-    frame_color = "#ff0000"
+    foreground = "#FFFFFF"  # Using col_gray4
+    frame_color = "#FF0000"  # Using col_brightborder
     timeout = 5
     icon = /home/niru/.config/dunst/critical.png
